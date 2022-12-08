@@ -1,23 +1,35 @@
-import logo from './logo.svg';
+
 import './App.css';
+import axios from 'axios';
+
+
+
+
 
 function App() {
+
+  axios.defaults.baseURL = process.env.REACT_APP_SERVER_URL;
+  axios.defaults.withCredentials = true;
+
+
+const test= () =>{
+console.log(process.env.REACT_APP_SERVER_URL)
+
+  let config = {
+  params :{
+    data :"123"
+  }
+}
+  axios.get("main/test",config).then((res=>{
+    if(res.status === 200){
+      console.log(res.data)
+    }
+  }))
+}
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div onClick={()=>test()}>
+      test
     </div>
   );
 }
