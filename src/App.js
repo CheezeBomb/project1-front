@@ -1,7 +1,7 @@
 
 import './App.css';
 import axios from 'axios';
-import { Route, Router, Routes } from 'react-router-dom';
+import { BrowserRouter, Route, Router, Routes } from 'react-router-dom';
 import Landing from './landing/landing';
 import Error from './error/error';
 
@@ -32,13 +32,14 @@ console.log(process.env.REACT_APP_SERVER_URL)
 
   return (
 
-    <div>
-      <Router>
+    <div >
+     <BrowserRouter>
         <Routes>
-          <Route exact path = "/" element={<Landing/>}/>
+          <Route path = "/test" element={<Landing/>}/>
           <Route path="*" element={<Error/>} />
         </Routes>
-      </Router>
+      </BrowserRouter> 
+  
     </div>
   );
 }
