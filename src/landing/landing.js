@@ -9,11 +9,11 @@ function Landing() {
 
     })
     const test = useCallback(()=>{
-        
+
     })
 
     return (
-    <div>Landing</div>
+    <div>Landing  DB연결/...</div>
   )
 }
 
